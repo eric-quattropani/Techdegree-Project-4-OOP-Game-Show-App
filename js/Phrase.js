@@ -4,25 +4,29 @@
 
 class Phrase {
     constructor(phrase) {
-        this.phrase = phrase;
+        this.phrase = phrase.toLowerCase();
     }
 
     /**
     * Display phrase on game board
     */
+
+
     addPhraseToDisplay() {
-        const letter = this.phrase.split('');
-        const phraseElement = document.querySelector('#phrase ul');
-        phrase.forEach(character => {
-            let listItems;
-            if (character === ' ') {
-                listItems = `<li class="space"></li>`
+        const ul = document.querySelector("ul");
+        const characters = this.phrase.split("");
+        
+        characters.forEach((character) => {
+            const li = document.createElement('li');
+            li.textContent = character;
+            ul.appendChild(li);
+
+            if (character !== ' ') {
+                li.classList.add("hide", "letter", `${character}`);
             } else {
-                listItems = `<li class="hide letter ${char}" >${char}</li>`
+                li.classList.add("space")
             }
-            phraseElement.innerHTML += listItems
         })
-       
     }
 
     //Up to step 6
