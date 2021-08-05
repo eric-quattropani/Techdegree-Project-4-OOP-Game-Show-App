@@ -10,6 +10,22 @@ start.addEventListener("click", () => {
     game.startGame();
 })
 
+    /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+
+const keys = document.getElementById("qwerty");
+
+keys.addEventListener("click", (key) => {
+    const clicked = key.target;
+    if (clicked.tagName === 'BUTTON') {
+    game.handleInteraction(key.target)
+    console.log(clicked);
+    }
+})
+
+
 // const phrase = new Phrase('Life is like a box of chocolates');
 // console.log(`Phrase - phrase: ${phrase.phrase}`);
 

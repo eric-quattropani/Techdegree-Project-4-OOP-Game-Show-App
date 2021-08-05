@@ -29,6 +29,34 @@ class Phrase {
         })
     }
 
-    //Up to step 6
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter) {
+        return this.phrase.includes(letter);
+    }
 
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        const gameLetters = document.getElementsByClassName("letter");
+        for (let i = 0; i < gameLetters.length; i++) {
+            if (gameLetters[i].classList.contains(letter)) {
+                gameLetters[i].classList.add('show')
+                gameLetters[i].classList.remove('hide')
+            }
+        }
+        
+
+        //try for loop if this doesn't work
+        // gameLetters.forEach((letter) => {
+        //     if (gameLetters[i].classList.contains(letter)) {
+        //         gameLetters[i].classList.remove("hide");
+        //         gameLetters[i].classList.add("show");
+        //     }
+        // })
+    }
 };
