@@ -70,9 +70,9 @@ class Game {
     resetGame() {
         const ul = document.querySelector("ul")
         ul.innerHTML = "";
-
         this.missed = 0;
         const keyboard = document.querySelectorAll(".key");
+        const heart = document.querySelectorAll('.tries img');
 
         for (let i = 0; i < keyboard.length; i++) {
             if (keyboard[i].disabled = true) {
@@ -86,8 +86,8 @@ class Game {
             }
         }
 
-        for (let i = 0; i < hearts.length; i++) {
-            hearts[i].src = `images/liveHeart.png`
+        for (let i = 0; i < heart.length; i++) {
+            heart[i].src = `images/liveHeart.png`
         }
     }
 
