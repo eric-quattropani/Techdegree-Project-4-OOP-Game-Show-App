@@ -1,5 +1,6 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
+ * Eric Quattropani
  * Phrase.js */
 
 class Phrase {
@@ -10,8 +11,6 @@ class Phrase {
     /**
     * Display phrase on game board
     */
-
-
     addPhraseToDisplay() {
         const ul = document.querySelector("ul");
         const characters = this.phrase.split("");
@@ -31,7 +30,6 @@ class Phrase {
 
     /**
     * Checks if passed letter is in phrase
-    * @param (string) letter - Letter to check
     */
     checkLetter(letter) {
         return this.phrase.includes(letter);
@@ -39,7 +37,6 @@ class Phrase {
 
     /**
     * Displays passed letter on screen after a match is found
-    * @param (string) letter - Letter to display
     */
     showMatchedLetter(letter) {
         const gameLetters = document.getElementsByClassName("letter");
@@ -49,14 +46,5 @@ class Phrase {
                 gameLetters[i].classList.remove('hide')
             }
         }
-        
-
-        //try for loop if this doesn't work
-        // gameLetters.forEach((letter) => {
-        //     if (gameLetters[i].classList.contains(letter)) {
-        //         gameLetters[i].classList.remove("hide");
-        //         gameLetters[i].classList.add("show");
-        //     }
-        // })
     }
 };
